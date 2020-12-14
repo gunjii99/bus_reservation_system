@@ -1,0 +1,180 @@
+<div class="jumbotron text-center">
+	<h1 class="display-5">
+		Feedback Form
+	</h1>
+</div>
+
+<div class="container">
+	<div class="row custom-wrapper">
+		<div class="col-md-12">
+
+			<!-- Form starts -->
+			<form [formGroup]="registrationForm" (ngSubmit)="onSubmit(); registrationForm.reset()">
+				<!-- Gender -->
+				<!-- <div class="group-gap">
+					<h5 class="mb-3">Gender</h5>
+					<div class="d-block my-3">
+
+						<div >
+							<input id="male" type="radio"  value="male" name="gender" formControlName="gender">
+              <label class="label label-default"for="male">Male</label>
+            
+              <input id="female" type="radio"  value="female" name="gender" formControlName="gender">
+              <label class="label label-default" for="female">Female</label>
+            </div>
+
+            <div *ngIf="isSubmitted && myForm.errors?.required">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div> -->
+
+
+        <div class="group-gap">
+            <h5 class="mb-3">1.How was your experience while interacting with the website?</h5>
+            <div class="d-block my-3">
+
+                <div class="custom-control custom-radio">
+                    <input id="1op1" type="radio" class="form-check-input" value="1" name="Question1" formControlName="Question1">&nbsp;&nbsp;&nbsp;
+                    <label  for="1op1">1</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="1op2" type="radio" class="form-check-input" value="2" name="Question1" formControlName="Question1">&nbsp;&nbsp;&nbsp;
+                    <label  for="1op2">2</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="1op3" type="radio" class="form-check-input" value="3" name="Question1" formControlName="Question1">&nbsp;&nbsp;&nbsp;
+                    <label  for="1op3">3</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="1op4" type="radio" class="form-check-input" value="4" name="Question1" formControlName="Question1">&nbsp;&nbsp;&nbsp;
+                    <label  for="1op4">4</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="1op5" type="radio" class="form-check-input" value="5" name="Question1" formControlName="Question1">&nbsp;&nbsp;&nbsp;
+                    <label  for="1op5">5</label>
+                </div>
+
+                <div class="form-check-label" style="color: red;" *ngIf="isSubmitted && myFormQ1.errors?.required">
+                    <p>Please select either value</p>
+                </div>
+            </div>
+        </div> 
+
+
+        <div class="group-gap">
+            <h5 class="mb-3">2.How likely are you to recommend our website to a friend?</h5>
+            <div class="d-block my-3">
+
+                <div class="custom-control custom-radio">
+                    <input id="2op1" type="radio" class="form-check-input" value="1" name="Question2" formControlName="Question2">&nbsp;&nbsp;&nbsp;
+                    <label  for="2op1">1</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="2op2" type="radio" class="form-check-input" value="2" name="Question2" formControlName="Question2">&nbsp;&nbsp;&nbsp;
+                    <label  for="2op2">2</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="2op3" type="radio" class="form-check-input" value="3" name="Question2" formControlName="Question2">&nbsp;&nbsp;&nbsp;
+                    <label  for="2op3">3</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="2op4" type="radio" class="form-check-input" value="4" name="Question2" formControlName="Question2">&nbsp;&nbsp;&nbsp;
+                    <label  for="2op4">4</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="2op5" type="radio" class="form-check-input" value="5" name="Question2" formControlName="Question2">&nbsp;&nbsp;&nbsp;
+                    <label  for="1op5">5</label>
+                </div>
+
+                <div class="form-check-label" style="color: red;" *ngIf="isSubmitted && myFormQ2.errors?.required">
+                    <p>Please select either value</p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="group-gap">
+            <h5 class="mb-3">3. How easy is it to navigate our webiste?</h5>
+            <div class="d-block my-3">
+
+                <div class="custom-control custom-radio">
+                    <input id="3op1" type="radio" class="form-check-input" value="1" name="Question3" formControlName="Question3">&nbsp;&nbsp;&nbsp;
+                    <label  for="3op1">1</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="3op2" type="radio" class="form-check-input" value="2" name="Question3" formControlName="Question3">&nbsp;&nbsp;&nbsp;
+                    <label  for="3op2">2</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="3op3" type="radio" class="form-check-input" value="3" name="Question3" formControlName="Question3">&nbsp;&nbsp;&nbsp;
+                    <label  for="3op3">3</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="3op4" type="radio" class="form-check-input" value="4" name="Question3" formControlName="Question3">&nbsp;&nbsp;&nbsp;
+                    <label  for="3op4">4</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="3op5" type="radio" class="form-check-input" value="5" name="Question3" formControlName="Question3">&nbsp;&nbsp;&nbsp;
+                    <label  for="3op5">5</label>
+                </div>
+                <div class="form-check-label" style="color: red;" *ngIf="isSubmitted && myFormQ3.errors?.required">
+                    <p>Please select either value</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="group-gap">
+            <h5 class="mb-3">4.Are our prices set at a comfortable level?</h5>
+            <div class="d-block my-3">
+
+                <div class="custom-control custom-radio">
+                    <input id="4op1" type="radio" class="form-check-input" value="1" name="Question4" formControlName="Question4">&nbsp;&nbsp;&nbsp;
+                    <label  for="4op1">1</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="4op2" type="radio" class="form-check-input" value="2" name="Question4" formControlName="Question4">&nbsp;&nbsp;&nbsp;
+                    <label  for="4op2">2</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="4op3" type="radio" class="form-check-input" value="3" name="Question4" formControlName="Question4">&nbsp;&nbsp;&nbsp;
+                    <label  for="4op3">3</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="4op4" type="radio" class="form-check-input" value="4" name="Question4" formControlName="Question4">&nbsp;&nbsp;&nbsp;
+                    <label  for="4op4">4</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="4op5" type="radio" class="form-check-input" value="5" name="Question4" formControlName="Question4">&nbsp;&nbsp;&nbsp;
+                    <label  for="4op5">5</label>
+                </div>
+
+                <div class="form-check-label" style="color: red;" *ngIf="isSubmitted && myFormQ4.errors?.required">
+                    <p>Please select either value</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="group-gap">
+            <h5 class="mb-3">5. Rate your overall experience?</h5>
+            <div class="d-block my-3">
+
+                <div class="custom-control custom-radio">
+                    <input id="5op1" type="radio" class="form-check-input" value="1" name="Question5" formControlName="Question5">&nbsp;&nbsp;&nbsp;
+                    <label  for="5op1">1</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="5op2" type="radio" class="form-check-input" value="2" name="Question5" formControlName="Question5">&nbsp;&nbsp;&nbsp;
+                    <label  for="5op2">2</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="5op3" type="radio" class="form-check-input" value="3" name="Question5" formControlName="Question5">&nbsp;&nbsp;&nbsp;
+                    <label  for="5op3">3</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="5op4" type="radio" class="form-check-input" value="4" name="Question5" formControlName="Question5">&nbsp;&nbsp;&nbsp;
+                    <label  for="5op4">4</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="5op5" type="radio" class="form-check-input" value="5" name="Question5" formControlName="Question5">&nbsp;&nbsp;&nbsp;
+                    <label  for="5op5">5</label>
+                </div>
+
+                <div class="form-check-label" style="color: red;" *ngIf="isSubmitted && myFormQ5.errors?.required">
+                    <p>Please select either value</p>
+                </div>
+            </div>
+        </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-danger btn-lg btn-block" >Submit</button>
+      </form><!-- Form ends -->
+
+    </div>
+  </div>
+</div>

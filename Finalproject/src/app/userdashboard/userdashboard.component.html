@@ -1,0 +1,41 @@
+
+<div class="page-container">
+    <div class="sidebar">
+
+        <div class="list-items">
+
+            
+            <a [routerLink]="['/search']" routerLinkActive="selected" class="list-item">
+                <i class="material-icons"></i>
+                HomePage
+            </a>
+
+            <a [routerLink]="['/userdashboard/bookings']" routerLinkActive="selected" class="list-item">
+                <i class="material-icons">receipt</i>
+                    Booking
+            </a>
+            <!--routerLinkActive="active"-->
+            <a [routerLink]="['/userdashboard/userprofile']" routerLinkActive="selected" class="list-item">
+                    <i class="material-icons">account_circle</i>
+                    Profile
+            </a>
+
+            <a [routerLink]="['/userdashboard/changepassword']" routerLinkActive="selected" class="list-item">
+                    <i class="material-icons">https</i>
+                    Change Password
+            </a>
+
+            <a [routerLink]="['/userdashboard/wallet']" routerLinkActive="selected" class="list-item">
+                    <i class="material-icons">account_balance_wallet</i>
+                    Wallet
+            </a>
+
+        </div>
+
+    </div>
+    <div class="page-content-container"> <!---->
+        <router-outlet></router-outlet>
+    </div>
+    
+
+</div>

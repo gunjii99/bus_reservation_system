@@ -1,0 +1,57 @@
+<!--<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a href="#" class="navbar-brand mr-3" routerLink="/admin-home">Bus Reservation</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active" routerLink="/adminhome">Home</a>
+                <a class="nav-item nav-link" routerLink="/search-flight">Book Ticket</a>
+                <a href="#" class="nav-item nav-link">View Booking Details</a>
+                <a href="#" class="nav-item nav-link" routerLink="/Aboutus">AboutUs</a
+                <a href="#" class="nav-item nav-link" routerLink="/addbus">Add Bus</a>
+                <a href="#" class="nav-item nav-link" routerLink="/view-bus">View Bus</a> 
+                <a href="#" class="nav-item nav-link" routerLink="/viewmonth">View Bus By Month</a>
+                <a href="#" class="nav-item nav-link" routerLink="/travel-frequent">Frequently Travel</a>
+
+            </div>
+             <div class="navbar-nav ml-auto">
+                <a href="#" class="nav-item nav-link" routerLink="/register" *ngIf="!login">Register</a>
+                <a href="#" class="nav-item nav-link" routerLink="/Login"*ngIf=" !login">Login</a> -->
+                <!-- <a href="#" class="nav-item nav-link" routerLink="/Login"*ngIf=" login" (click)=logout()>Logout</a> -->
+            <!-- </div>
+        </div>
+    </div>    
+</nav>-->
+
+
+<div class="page-container">
+    <div class="sidebar">
+
+        <div class="list-items">
+
+            <a [routerLink]="['/adminhome/addbus']" routerLinkActive="selected" class="list-item">
+             
+                  Add Bus
+            </a>
+            <!--routerLinkActive="active"-->
+            <a [routerLink]="['/adminhome/viewbus']" routerLinkActive="selected" class="list-item">
+                   
+                   View Bus
+            </a>
+
+            <a [routerLink]="['/adminhome/viewmonth']" routerLinkActive="selected" class="list-item">
+                   
+                    View Bookings by Month
+            </a>
+
+        </div>
+
+    </div>
+    <div class="page-content-container"> <!---->
+        <router-outlet></router-outlet>
+    </div>
+    
+
+</div>

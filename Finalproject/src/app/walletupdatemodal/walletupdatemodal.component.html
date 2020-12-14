@@ -1,0 +1,10 @@
+<div style="height: 100%;">
+
+<form role="form" class="form" method="post" [formGroup]="updatewallet" (ngSubmit)="onSubmit()">
+    <div class="form-group" style="padding-top:30%">
+      <label for="addamount" style="color: white;">Add Amount</label>
+      <input type="number" min=0 oninput="validity.valid||(value='');"  formControlName="WalletDetails" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter desired amount">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

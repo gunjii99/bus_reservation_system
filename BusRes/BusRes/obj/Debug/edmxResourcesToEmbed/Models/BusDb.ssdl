@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbNewBusModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAdmin">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="40" />
+    <Property Name="username" Type="varchar" MaxLength="30" />
+    <Property Name="Password_" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblBooking">
+    <Key>
+      <PropertyRef Name="bookingID" />
+    </Key>
+    <Property Name="Source_B" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Destination_B" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="StartDate" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="StartTime" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TicketType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TravelFare" Type="real" Nullable="false" />
+    <Property Name="CustUsername" Type="varchar" MaxLength="40" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="25" />
+    <Property Name="BusNo" Type="varchar" MaxLength="15" />
+    <Property Name="SelectedSeats" Type="nvarchar" MaxLength="40" />
+    <Property Name="paymentBy" Type="varchar" MaxLength="20" />
+    <Property Name="bookingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="paymentId" Type="varchar" MaxLength="9" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="CancellationBit" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tblBus">
+    <Key>
+      <PropertyRef Name="BusNo" />
+    </Key>
+    <Property Name="BusNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="NoOfSeats" Type="int" Nullable="false" />
+    <Property Name="Source_" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Destination" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ViaStop" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="StartTime" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EndTime" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PerSeatCost" Type="real" Nullable="false" />
+    <Property Name="BusType" Type="bit" Nullable="false" />
+    <Property Name="BusName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Availableseats" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCancellation">
+    <Key>
+      <PropertyRef Name="Id_" />
+    </Key>
+    <Property Name="PaymentId" Type="varchar" MaxLength="9" />
+    <Property Name="Refund" Type="real" />
+    <Property Name="Id_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookingID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCustomer">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="Index_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="30" />
+    <Property Name="Lname" Type="varchar" MaxLength="30" />
+    <Property Name="Password_" Type="varchar" MaxLength="20" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="40" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="WalletDetails" Type="real" />
+  </EntityType>
+  <EntityType Name="tblFeedback">
+    <Key>
+      <PropertyRef Name="Id_" />
+    </Key>
+    <Property Name="Id_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question1" Type="int" />
+    <Property Name="Question2" Type="int" />
+    <Property Name="Question3" Type="int" />
+    <Property Name="Question4" Type="int" />
+    <Property Name="Question5" Type="int" />
+  </EntityType>
+  <EntityType Name="tblReturnTicket">
+    <Key>
+      <PropertyRef Name="Id_" />
+    </Key>
+    <Property Name="Return_data" Type="varchar" MaxLength="10" />
+    <Property Name="Return_Time" Type="varchar" MaxLength="10" />
+    <Property Name="Id_" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bookingID" Type="int" />
+  </EntityType>
+  <Association Name="FK__tblBookin__BusNo__300424B4">
+    <End Role="tblBus" Type="Self.tblBus" Multiplicity="0..1" />
+    <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBus">
+        <PropertyRef Name="BusNo" />
+      </Principal>
+      <Dependent Role="tblBooking">
+        <PropertyRef Name="BusNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBookin__CustU__30F848ED">
+    <End Role="tblCustomer" Type="Self.tblCustomer" Multiplicity="0..1" />
+    <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCustomer">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="tblBooking">
+        <PropertyRef Name="CustUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCancel__booki__6FE99F9F">
+    <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="0..1" />
+    <End Role="tblCancellation" Type="Self.tblCancellation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBooking">
+        <PropertyRef Name="bookingID" />
+      </Principal>
+      <Dependent Role="tblCancellation">
+        <PropertyRef Name="bookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblReturn__booki__70DDC3D8">
+    <End Role="tblBooking" Type="Self.tblBooking" Multiplicity="0..1" />
+    <End Role="tblReturnTicket" Type="Self.tblReturnTicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBooking">
+        <PropertyRef Name="bookingID" />
+      </Principal>
+      <Dependent Role="tblReturnTicket">
+        <PropertyRef Name="bookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Betweentwodates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="varchar" Mode="In" />
+    <Parameter Name="EndDate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="BUS_SEARCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Source_" Type="varchar" Mode="In" />
+    <Parameter Name="Destination" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Fetch_paymentid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bookingID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fetchpaymentbyemail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Source_B" Type="varchar" Mode="In" />
+    <Parameter Name="Destination_B" Type="varchar" Mode="In" />
+    <Parameter Name="StartDate" Type="varchar" Mode="In" />
+    <Parameter Name="StartTime" Type="varchar" Mode="In" />
+    <Parameter Name="TicketType" Type="varchar" Mode="In" />
+    <Parameter Name="TravelFare" Type="real" Mode="In" />
+    <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fetchpaymentbyemail1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Source_B" Type="varchar" Mode="In" />
+    <Parameter Name="Destination_B" Type="varchar" Mode="In" />
+    <Parameter Name="StartDate" Type="varchar" Mode="In" />
+    <Parameter Name="StartTime" Type="varchar" Mode="In" />
+    <Parameter Name="TravelFare" Type="real" Mode="In" />
+    <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fetchpaymentid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Username" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="FrequentlyTravel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="RefundNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paymentid" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="dbNewBusModelStoreContainer">
+    <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBooking" EntityType="Self.tblBooking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBus" EntityType="Self.tblBus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCancellation" EntityType="Self.tblCancellation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCustomer" EntityType="Self.tblCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFeedback" EntityType="Self.tblFeedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblReturnTicket" EntityType="Self.tblReturnTicket" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblBookin__BusNo__300424B4" Association="Self.FK__tblBookin__BusNo__300424B4">
+      <End Role="tblBus" EntitySet="tblBus" />
+      <End Role="tblBooking" EntitySet="tblBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBookin__CustU__30F848ED" Association="Self.FK__tblBookin__CustU__30F848ED">
+      <End Role="tblCustomer" EntitySet="tblCustomer" />
+      <End Role="tblBooking" EntitySet="tblBooking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCancel__booki__6FE99F9F" Association="Self.FK__tblCancel__booki__6FE99F9F">
+      <End Role="tblBooking" EntitySet="tblBooking" />
+      <End Role="tblCancellation" EntitySet="tblCancellation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblReturn__booki__70DDC3D8" Association="Self.FK__tblReturn__booki__70DDC3D8">
+      <End Role="tblBooking" EntitySet="tblBooking" />
+      <End Role="tblReturnTicket" EntitySet="tblReturnTicket" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

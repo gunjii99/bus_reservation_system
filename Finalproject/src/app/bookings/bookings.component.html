@@ -1,0 +1,80 @@
+<h1 style="color:white">
+  &nbsp; Bookings
+</h1>
+
+<div>
+<form role="form">
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Booking ID</th>
+      <th scope="col">Source</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Date</th>
+      <th scope="col">Fare</th>
+      <th scope="col">Payment Id</th>
+      <th scope="col">Bus No</th>
+      <th scope="col">Seats</th>
+      <th></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let booking of bookingdetails">
+    <tr *ngIf="booking.CancellationBit == '0'">
+      <td>{{booking.bookingID}}</td>
+      <td>{{booking.Source_B}}</td>
+      <td>{{booking.Destination_B}}</td>
+      <td>{{booking.StartDate}}</td>
+      <td>Rs. {{booking.TravelFare}}</td>
+      <td>{{booking.paymentId}}</td>
+      <td>{{booking.BusNo}}</td>
+      <td>{{booking.SelectedSeats}}</td>
+      <td *ngIf="booking.StartDate > currentdate() && booking.CancellationBit == '0' "><button type="submit" class="btn btn-default" value="1" (click)="submit(booking.paymentId)" routerLinkActive="selected" >Cancel</button> </td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+</form>
+</div>
+
+
+<h1 style="color:white">
+&nbsp; Cancellations
+</h1>
+<div>
+<form role="form">
+<table class="table table-borderless table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Booking ID</th>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Date</th>
+        <th scope="col">Fare</th>
+        <th scope="col">Payment Id</th>
+        <th scope="col">Bus No</th>
+        <th scope="col">Seats</th>
+        <th></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let booking of bookingdetails">
+        <tr *ngIf="booking.CancellationBit == '1'">
+          <td>{{booking.bookingID}}</td>
+          <td>{{booking.Source_B}}</td>
+          <td>{{booking.Destination_B}}</td>
+          <td>{{booking.StartDate}}</td>
+          <td>Rs. {{booking.TravelFare}}</td>
+          <td>{{booking.paymentId}}</td>
+          <td>{{booking.BusNo}}</td>
+          <td>{{booking.SelectedSeats}}</td>
+        </tr>
+        
+      </ng-container>
+    </tbody>
+  </table>
+</form>
+</div>
+

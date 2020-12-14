@@ -1,0 +1,40 @@
+<div class="topnav">
+    <a *ngIf="!(loginsessionuser)" class="active" routerLink="search">Home</a>
+    <a *ngIf="(loginsessionuser && usertype=='user')" class="active" routerLink="search">Home</a>
+    <a *ngIf="(loginsessionuser && usertype=='admin')" routerLink="adminhome">Bus Reservation System Admin Panel</a>
+    <a *ngIf="(loginsessionuser && usertype=='user')" routerLink="userdashboard">User Dashboard</a>
+    <a  [routerLink]="['/aboutus']">About Us</a>
+    <div class="topnav-center">
+      <label style="padding-left: 18%;color: orange;font-size: 20px;padding-top: 14px;">Bus Reservation System</label>
+    <div class="topnav-right">
+    <a *ngIf="!(loginsessionuser)" routerLink="login"><span class="glyphicon glyphicon-user"></span>&nbsp; Login</a>
+    <a *ngIf="loginsessionuser">Hello {{username}} </a>
+    <a *ngIf="loginsessionuser" (click)="logout()">Logout</a>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="main-page">
+  <router-outlet></router-outlet>
+</div>
+<!--<app-seatselect></app-seatselect>-->
+<!-- <app-reset></app-reset> -->
+<!--<app-resetconfirmpg></app-resetconfirmpg>-->

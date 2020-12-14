@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a href="#" class="navbar-brand mr-3" routerLink="/admin-home">Bus Reservation</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active" routerLink="/admin-home">Home</a>
+                <!--<a class="nav-item nav-link" routerLink="/search-flight">Book Ticket</a>
+                <a href="#" class="nav-item nav-link">View Booking Details</a>
+                <a href="#" class="nav-item nav-link" routerLink="/Aboutus">AboutUs</a>-->
+                <a href="#" class="nav-item nav-link" routerLink="/add-bus">Add Bus</a>
+                <a href="#" class="nav-item nav-link" routerLink="/view-bus">View Bus</a>
+                <a href="#" class="nav-item nav-link" routerLink="/view-month">View Bus By Month</a>
+                <a href="#" class="nav-item nav-link" routerLink="/travel-frequent">Frequent Travel</a>
+            </div>
+            <!-- <div class="navbar-nav ml-auto">
+                <a href="#" class="nav-item nav-link" routerLink="/register" *ngIf="!login">Register</a>
+                <a href="#" class="nav-item nav-link" routerLink="/Login"*ngIf=" !login">Login</a> -->
+                <!-- <a href="#" class="nav-item nav-link" routerLink="/Login"*ngIf=" login" (click)=logout()>Logout</a> -->
+            <!-- </div> -->
+        </div>
+    </div>    
+</nav>
+<form  #addClientForm="ngForm" (ngSubmit)="showdata()">
+
+<button type="submit">Find Data</button>
+
+<table border="1" class="table table-striped">
+    <tr>
+        <th>Source_B</th>
+        <th>Destination_B</th>
+        <th>Total Count</th>
+        <!-- <th>StartDate</th>
+        <th>StartTime</th>
+        <th>TicketType</th>
+        <th>TravelFare</th>
+        
+        <th>PaymentId</th>
+        <th>CustUsername</th>
+        <th>EmailId</th>
+        <th>BusNo</th>
+        <th>SelectedSeats</th> -->
+    </tr>
+
+    <tr *ngFor="let f of emp">
+       <td>{{f.Source_B}}</td>
+       <td>{{f.Destination_B}}</td>
+       <tc>{{f.total_count}}</tc>
+       <!-- <td>{{f.StartDate}}</td>
+       <td>{{f.StartTime}}</td>
+       <td>{{f.TicketType}}</td>
+       <td>{{f.TravelFare}}</td>
+       <td>{{f.PaymentId}}</td>
+       <td>{{f.CustUsername}}</td>
+       <td>{{f.EmailId}}</td>
+       <td>{{f.BusNo}}</td>
+       <td>{{f.SelectedSeats}}</td> -->
+    </tr>
+
+</table>
+</form>

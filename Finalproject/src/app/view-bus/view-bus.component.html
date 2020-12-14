@@ -1,0 +1,31 @@
+
+
+<table class="table table-striped" >
+    <tr style="color: darkorange;">
+        <th>BusNo</th>
+        <th>NoOfSeats</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>ViaStop</th>
+        <th>StartTime</th>
+        <th>EndTime</th>
+        <th>PerSeatCost</th>
+        
+        <th>BusName</th>
+    </tr>
+
+    <tr *ngFor="let f of busdetails" style="color: cyan;">
+       <td>{{f.BusNo}}</td>
+       <td>{{f.NoOfSeats}}</td>
+       <td>{{f.Source_}}</td>
+       <td>{{f.Destination}}</td>
+       <td>{{f.ViaStop}}</td>
+       <td>{{f.StartTime}}</td>
+       <td>{{f.EndTime}}</td>
+       <td>Rs. {{f.PerSeatCost}} </td>
+       
+       <td>{{f.BusName}}</td>
+       
+    </tr>
+
+</table>

@@ -1,0 +1,20 @@
+.center {
+    display: flex;
+    justify-content: center;
+  }
+  #id1
+  {
+    display: flex;
+    justify-content: center;
+  }
+
+  #fullbody{
+      width: 100%;
+      height: 100%;
+      /* background-image:url('../../assets/images/busnew4.png'); */
+      background-color: rgb(9, 9, 36); 
+      background-repeat:no-repeat;}
+
+      .card {
+        background-color: rgba(255,255,255, 0.8) !important;
+    }

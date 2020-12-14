@@ -1,0 +1,14 @@
+
+
+<form role="form" [formGroup]="updatebit" (ngSubmit)="onSubmit()">
+    <label style="color: white;">Refund Amount</label>
+    <table>
+        <td style="color:orange">Rs. {{refunddetails}}</td>
+    </table>
+    <div class="form-check">
+        <input type="checkbox">
+        <label class="form-check-label" for="exampleCheck1" style="color: red;">Confirm Cancellation</label>
+      </div>
+    <button type="submit" formControlName="CancellationBit" class="btn btn-warning" >Confirm</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-warning" [routerLink]="['/userdashboard/bookings']" routerLinkActive="selected">Go Back</button>
+</form>

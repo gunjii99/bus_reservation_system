@@ -1,0 +1,197 @@
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="display-4">
+                Add Bus
+            </div>
+            <hr class="my-4">
+            <form [formGroup]="addBusForm" (ngSubmit)= "onFormSubmit(); addBusForm.reset()">
+             
+                <div class="form-group">
+                    <label for="BusNo">
+                        Bus Number
+                    </label>
+                    <input type="text" class="form-control" formControlName="BusNo" required>
+    
+                    <div class="alert alert-danger" *ngIf="BusNo.errors && BusNo.touched">
+                        <small *ngIf="BusNo.errors.required">
+                            Bus Number is required
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="NoOfSeats">
+                        Number Of Seats
+                    </label>
+                    <input type="number" class="form-control" formControlName="NoOfSeats" required>
+    
+                    <div class="alert alert-danger" *ngIf="NoOfSeats.errors && NoOfSeats.touched">
+                        <small *ngIf="NoOfSeats.errors.required">
+                            No of seats is required
+                        </small>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="Source_">
+                        Source:
+                    </label>
+                    <input type="text" class="form-control" formControlName="Source_" required>
+    
+                    <div class="alert alert-danger" *ngIf="Source_.errors && Source_.touched">
+                        <small *ngIf="Source_.errors.required">
+                            Source is required
+                        </small>
+                    </div>
+                </div>
+
+                 <!-- <div class="form-group">
+                    <label for="Destination1">
+                        Destination
+                    </label>
+                    <input type="text" class="form-control" formControlName="Destination" required>
+    
+                    <div class="alert alert-danger" *ngIf="Destination.errors && Destination.touched">
+                        <small *ngIf="Destination.errors.required">
+                            Destination is required
+                        </small>
+                    </div>
+                </div>  -->
+
+                <div class="form-group">
+                    <label for="Destination">
+                        Destination:
+                    </label>
+                    <input type="text" class="form-control" formControlName="Destination" required>
+    
+                    <div class="alert alert-danger" *ngIf="Destination.errors && Destination.touched">
+                        <small *ngIf="Destination.errors.required">
+                            Source is required
+                        </small>
+                    </div>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="ViaStop">
+                        ViaStop:
+                    </label>
+                    <input type="text" class="form-control" formControlName="ViaStop" required>
+    
+                    <div class="alert alert-danger" *ngIf="ViaStop.errors && ViaStop.touched">
+                        <small *ngIf="ViaStop.errors.required">
+                            Destination is required
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="StartTime">
+                        StartTime:
+                    </label>
+                    <input type="text" class="form-control" formControlName="StartTime" required>
+    
+                    <div class="alert alert-danger" *ngIf="StartTime.errors && StartTime.touched">
+                        <small *ngIf="StartTime.errors.required">
+                            Start time is required
+                        </small>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="EndTime">
+                        EndTime:
+                    </label>
+                    <input type="text" class="form-control" formControlName="EndTime" required>
+    
+                    <div class="alert alert-danger" *ngIf="EndTime.errors && EndTime.touched">
+                        <small *ngIf="EndTime.errors.required">
+                            EndTime is required
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="PerSeatCost">
+                       PerSeatCost:
+                    </label>
+                    <input type="number" class="form-control" formControlName="PerSeatCost" required>
+    
+                    <div class="alert alert-danger" *ngIf="PerSeatCost.errors && PerSeatCost.touched">
+                        <small *ngIf="PerSeatCost.errors.required">
+                            PerSeatCost is required
+                        </small>
+                    </div>
+                </div>
+
+                
+
+
+                <div class="form-group">
+                    <label for="BusName">
+                        Bus Name:
+                    </label>
+                    <input type="text" class="form-control" formControlName="BusName" required>
+    
+                    <div class="alert alert-danger" *ngIf="BusName.errors && BusName.touched">
+                        <small *ngIf="BusName.errors.required">
+                            BusName is required
+                        </small>
+                    </div>
+                </div>
+
+                
+<!--     
+                    
+                <div class="form-group">
+    
+                    <label for="Source_">Source:</label>
+                    <input type="time" id="dept" name="Source_" formControlName="Source_">
+    
+                </div>
+    
+                <div class="form-group">
+                    <label for="ArrivalTime">ArrivalTime:</label>
+                    <input type="time" id="ArrivalTime" name="ArrivalTime" formControlName="ArrivalTime">
+    
+                </div>
+    
+                <div class="form-group">
+                    <label for="Duration">
+                        Duration
+                    </label>
+                    <input type="text" class="form-control" formControlName="Duration" required>
+    
+                    <div class="alert alert-danger" *ngIf="Duration.errors && Duration.touched">
+                        <small *ngIf="Duration.errors.required">
+                            Duration is required
+                        </small></div>
+                </div> -->
+    
+                <!-- <div class="form-group">  
+                    <label for="FlightDate">
+                        FlightDate
+                    </label>
+                    <input type="date" name="FlightDate" data-placeholder="FlightDate" class="form-control" formControlName="FlightDate" required><br>
+                      <div class="alert alert-danger" *ngIf="FlightDate.errors && FlightDate.touched">
+                        <small *ngIf="FlightDate.errors.required">
+                          FlightDate is required
+                        </small>  
+                      </div>
+                </div> -->
+    
+                
+                
+                
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">Add</button>&nbsp;&nbsp;
+                    
+                </div>
+    
+                <div class="text-danger">{{Error}}</div>
+            </form>
+        </div>
+    </div>

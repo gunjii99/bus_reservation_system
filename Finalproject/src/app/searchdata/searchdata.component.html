@@ -1,0 +1,71 @@
+<!--<div class="id">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#"><img src="/assets/images/buslogo.png" width="30" height="30" alt="logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" >Home</a>
+              <a class="nav-item nav-link" >Contact Us</a>
+              <a class="nav-item nav-link" >Terms And Conditions</a>
+          </div>
+          <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/login">Login</a>
+              <a class="nav-item nav-link" href="/register">Register</a>
+              <a class="nav-item nav-link">Welcome {{username}}</a>
+          </div>
+        </div>
+    </nav>-->
+  
+  
+  
+  
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="row text-center">
+    <h1 class=" text-capitalize col-md-12 mb-3 text-center">{{source1}} - {{destination1}}</h1>
+  </div>
+
+  <table class="table" >  
+    <thead class="thead-dark">  
+      <tr>  
+        <th scope="col">Bus No</th>  
+        <th scope="col">Bus Name</th>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">No Of Seats</th>
+        <th scope="col">Departure</th>
+        <th scope="col">Arrival</th>      
+        <th scope="col">ViaStop</th>
+        <th scope="col">Bus Fare</th>  
+        <th scope="col">Available Seats</th> 
+        <th scope="col">Book Ticket</th> 
+      </tr>  
+    </thead>  
+    
+    <tbody *ngFor="let emp of emp"  >  
+      <tr ng-If="emp.Source_==Source_ && emp.Destination==Destination" >  
+        <th scope="row">{{emp.BusNo}}</th>  
+        <td >{{emp.BusName}}</td>  
+        <td >{{emp.Source_}}</td>
+        <td >{{emp.Destination}}</td>
+        <td >{{emp.NoOfSeats}}</td>
+        <td >{{emp.StartTime}}</td>
+        <td >{{emp.EndTime}}</td>
+        <td >{{emp.ViaStop}}</td>    
+        <td >{{emp.PerSeatCost}}</td>
+        <td>{{emp.Availableseats}}</td>      
+        <td><button class="btn btn-danger btn-sm" (click)="bookseat(emp.BusNo,emp.BusName,emp.Source_,emp.Destination,emp.NoOfSeats,emp.StartTime,emp.EndTime,emp.ViaStop,emp.PerSeatCost)">View Seats</button></td>        
+      </tr>  
+      <tr *ngIf="!emp||emp.length==0">  
+        <td colspan="4">  
+            Sorry No Bus available for this route 
+        </td>  
+      </tr>  
+    </tbody>  
+  </table>  
+  

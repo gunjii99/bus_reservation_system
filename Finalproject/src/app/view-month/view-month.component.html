@@ -1,0 +1,45 @@
+
+<form  #addClientForm="ngForm" (ngSubmit)="searchdata()">
+<div>
+    <label style="color: orange;font-size: 17px;">Start Date:  </label>
+    <input type="date" #startdate="ngModel" 
+    [(ngModel)]="model.startdate" name="startdate" style="height: 25px;" />
+    
+
+    <Label style="color: orange;padding-left: 100px;font-size: 17px;">End Date:  </Label>
+    <input type="date" #enddate="ngModel"
+    [(ngModel)]="model.enddate" name="enddate" style="height: 25px;"/>
+</div>
+<div style="padding-top: 25px;padding-left: 28%;padding-bottom: 10px;">
+<button type="submit" style="background-color: orange;color: blue;font-size: 20px;">Submit</button>
+</div>
+<table class="table table-striped" >
+    <tr style="color: orange;">
+        <th>Source_B</th>
+        <th>Destination_B</th>
+        <th>StartDate</th>
+        <th>StartTime</th>
+        <th>TravelFare</th>
+        
+        <th>PaymentId</th>
+        <th>CustUsername</th>
+        <th>EmailId</th>
+        <th>BusNo</th>
+        <th>SelectedSeats</th>
+    </tr>
+
+    <tr *ngFor="let f of emp" style="color: cyan;">
+       <td>{{f.Source_B}}</td>
+       <td>{{f.Destination_B}}</td>
+       <td>{{f.StartDate}}</td>
+       <td>{{f.StartTime}}</td>
+       <td>Rs. {{f.TravelFare}}</td>
+       <td>{{f.paymentId}}</td>
+       <td>{{f.CustUsername}}</td>
+       <td>{{f.EmailId}}</td>
+       <td>{{f.BusNo}}</td>
+       <td>{{f.SelectedSeats}}</td>
+    </tr>
+
+</table>
+</form>

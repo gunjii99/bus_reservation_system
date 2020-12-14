@@ -1,0 +1,120 @@
+<h1 style="color:white">
+    &nbsp; Profile
+</h1>
+
+<div class="container bootstrap snippets bootdey">
+    <div class="panel-body inf-content">
+        <div class="row">
+            <div class="col-md-4">
+                <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario">
+            </div>
+            <div class="col-md-6">
+                <strong style="color:white">Information</strong><br>
+                <div class="table-responsive">
+                <table class="table table-user-information">
+                    <tbody>
+
+                        <tr *ngFor="let user of userdetails" class="noBorder">        
+                            <td>
+                                <strong style="color:white">
+                                    <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                    Username                                                
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.username}}     
+                            </td>
+                        </tr>
+
+                        <tr *ngFor="let user of userdetails" class="noBorder">    
+                            <td>
+                                <strong style="color:white">
+                                    <span class="glyphicon glyphicon-user  text-primary"></span>    
+                                    Firstname                                                
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.Fname}}     
+                            </td>
+                        </tr>
+
+                        <tr *ngFor="let user of userdetails" class="noBorder">        
+                            <td>
+                                <strong style="color:white">
+                                    <span class="glyphicon glyphicon-cloud text-primary"></span>  
+                                    Lastname                                                
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.Lname}}  
+                            </td>
+                        </tr>
+
+                        <tr *ngFor="let user of userdetails" class="noBorder">        
+                            <td>
+                                <strong style="color:white">
+                                    <span class="glyphicon glyphicon-envelope text-primary"></span> 
+                                    Email                                                
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.EmailId}}  
+                            </td>
+                            <td><button class="btn btn-default" [routerLink]="['/userdashboard/emailupdatemodal']" routerLinkActive="selected"><span class="glyphicon glyphicon-edit"></span></button></td>
+                        </tr>
+
+                        <tr *ngFor="let user of userdetails" class="noBorder">        
+                            <td>
+                                <strong style="color:white">
+                                    <span class="glyphicon glyphicon-earphone text-primary"></span> 
+                                    Contact                                                
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.ContactNo}}
+                            </td>
+                            <td><button class="btn btn-default" [routerLink]="['/userdashboard/contactupdatemodal']" routerLinkActive="selected"><span class="glyphicon glyphicon-edit"></span></button></td>
+                        </tr>
+
+                        <tr *ngFor="let user of userdetails" class="noBorder">        
+                            <td>
+                                <strong style="color:white">
+                                    <span class="glyphicon glyphicon-home text-primary"></span>
+                                    Address                                                
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.Address}}
+                            </td>
+                            <td><button class="btn btn-default" [routerLink]="['/userdashboard/addressupdatemodal']" routerLinkActive="selected"><span class="glyphicon glyphicon-edit"></span></button></td>
+                        </tr>
+
+                        <tr *ngFor="let user of userdetails" class="noBorder">        
+                            <td>
+                                <strong style="color:white">
+                                    <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                    DOB                                                
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.DOB}}
+                            </td>
+                        </tr>
+                        <tr *ngFor="let user of userdetails" class="noBorder">        
+                            <td>
+                                <strong style="color:white">
+                                    <span class="fa fa-intersex text-primary"></span> 
+                                    Gender                                                
+                                </strong>
+                            </td>
+                            <td class="text-primary">
+                                {{user.Gender}} 
+                            </td>
+                        </tr>                                 
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

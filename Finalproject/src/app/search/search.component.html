@@ -1,0 +1,108 @@
+    
+    
+    
+    
+  
+    <div  id="fullbody">
+      <!--Body-->   
+      
+      <form [formGroup]="UserForm" (ngSubmit)="onSubmit()">
+        <div class="row" style="margin-top:10px;margin-bottom: 10px;padding-left: 35%;padding-top: 5%;">     
+                    
+          <div class="col-sm-6 form-group" >  
+              <label style="font-size: 30px; font-family: Roboto;color:orange; ">Source</label>
+             <select name="Source"  formControlName="Source_" class="form-control" style="min-height:30px">
+              
+                <option value="Mumbai">Mumbai</option>
+                <option value="Pune">Pune</option>
+              
+                <option value="indore">Indore</option>
+              </select>
+              <label style="font-size: 30px; font-family: Arial, Helvetica, sans-serif;color:orange;padding-top: 15px;">Destination</label>
+              <select name="Destination"  formControlName="Destination" class="form-control" style="min-height:30px">
+                   
+                <option value="Goa">Goa</option>
+                <option value="Pune">Pune</option>          
+                <option value="indore">Indore</option>
+              </select>
+
+              <!-- <label style="font-size: 30px; font-family: Arial, Helvetica, sans-serif; color:orange;padding-top: 20px;">Ticket Type</label> -->
+              <!-- <select name="Destination"  formControlName="TicketType" class="form-control"  style="min-height:30px">
+                     
+                  <option value="OneWay">One Way</option>          
+                </select> -->
+
+                <label style="font-size: 30px; font-family: Arial, Helvetica, sans-serif; color:orange;padding-top: 15px;">Date of Travel</label>
+                <input type="date" formControlName="DOB" min="{{date | date:'yyyy-MM-dd'}}" max="2022-01-01" class="form-control"  />
+                <div *ngIf="DOB.errors && DOB.touched" class="text-danger">
+                    <div *ngIf="DOB.errors.required">Date of Travel is required</div>
+                </div>
+
+               
+                <div class="col-sm-6 form-group">
+                  <div style="padding-left:130px;padding-top:30px">
+                    <button class="btn btn-warning" type="submit">Search Bus</button>&nbsp;
+                  </div>
+                </div>
+        </div> 
+          
+        
+    </div>
+        </form>
+
+        <div class="row">
+          <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h4 class="card-title"><b>Introducing Safety Guidelines</b></h4>
+                <ul>
+                    <li><h4 style="font-family: Roboto;"><b>Sanitized bus</b></h4></li>
+                    <li><h4 style="font-family: Roboto;"><b>Mandatory Masks</b></h4></li>
+                    <li><h4 style="font-family: Roboto;"><b>Thermal Screening</b></h4></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h4 class="card-title"><b>Why Buy Tickets From Us?</b></h4>
+                <ul>
+                    <li><h4 style="font-family: Roboto;">Buy Bus Tickets anytime anywhere</h4></li>
+                    <li><h4 style="font-family: Roboto;">Pay by credit card, debit card or wallet</h4></li>
+                    <li><h4 style="font-family: Roboto;"> Customer Service <b>(8 AM to 11PM)</b></h4></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="center">
+          <h1 style="font-family: Roboto; color:orange;">WE PROMISE TO DELIVER</h1>
+        </div>
+        <hr>
+        
+        <div class="card-group">
+          <div class="card text-black bg-dark mb-3">
+              <div class="card-header">SAFE JOURNEY</div>
+              <div class="card-body">
+                <p class="card-text">we have brought in a set of measures like Sanitized buses, mandatory masks etc. to ensure you travel safely.</p>
+              </div>
+            </div>
+          <div class="card text-black bg-dark mb-3" >
+              <div class="card-header">SUPERIOR CUSTOMER SERVICE</div>
+              <div class="card-body">
+                <p class="card-text">We put our experience and relationships to good use and are available to solve your travel issues.</p>
+              </div>
+          </div>
+          <div class="card text-black bg-dark mb-3">
+              <div class="card-header">AFFORDABLE PRICES</div>
+              <div class="card-body">
+                <p class="card-text">We always give you the lowest price with the best partner offers.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    

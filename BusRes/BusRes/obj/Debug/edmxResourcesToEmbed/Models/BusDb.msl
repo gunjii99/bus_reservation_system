@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbNewBusModelStoreContainer" CdmEntityContainer="dbNewBusEntities7">
+    <EntitySetMapping Name="tblAdmins">
+      <EntityTypeMapping TypeName="dbNewBusModel.tblAdmin">
+        <MappingFragment StoreEntitySet="tblAdmin">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Password_" ColumnName="Password_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBookings">
+      <EntityTypeMapping TypeName="dbNewBusModel.tblBooking">
+        <MappingFragment StoreEntitySet="tblBooking">
+          <ScalarProperty Name="Source_B" ColumnName="Source_B" />
+          <ScalarProperty Name="Destination_B" ColumnName="Destination_B" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="TicketType" ColumnName="TicketType" />
+          <ScalarProperty Name="TravelFare" ColumnName="TravelFare" />
+          <ScalarProperty Name="CustUsername" ColumnName="CustUsername" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="BusNo" ColumnName="BusNo" />
+          <ScalarProperty Name="SelectedSeats" ColumnName="SelectedSeats" />
+          <ScalarProperty Name="paymentBy" ColumnName="paymentBy" />
+          <ScalarProperty Name="bookingID" ColumnName="bookingID" />
+          <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+          <ScalarProperty Name="CancellationBit" ColumnName="CancellationBit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBus">
+      <EntityTypeMapping TypeName="dbNewBusModel.tblBu">
+        <MappingFragment StoreEntitySet="tblBus">
+          <ScalarProperty Name="BusNo" ColumnName="BusNo" />
+          <ScalarProperty Name="NoOfSeats" ColumnName="NoOfSeats" />
+          <ScalarProperty Name="Source_" ColumnName="Source_" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="ViaStop" ColumnName="ViaStop" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="PerSeatCost" ColumnName="PerSeatCost" />
+          <ScalarProperty Name="BusType" ColumnName="BusType" />
+          <ScalarProperty Name="BusName" ColumnName="BusName" />
+          <ScalarProperty Name="Availableseats" ColumnName="Availableseats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCancellations">
+      <EntityTypeMapping TypeName="dbNewBusModel.tblCancellation">
+        <MappingFragment StoreEntitySet="tblCancellation">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="Refund" ColumnName="Refund" />
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="bookingID" ColumnName="bookingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCustomers">
+      <EntityTypeMapping TypeName="dbNewBusModel.tblCustomer">
+        <MappingFragment StoreEntitySet="tblCustomer">
+          <ScalarProperty Name="Index_" ColumnName="Index_" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Password_" ColumnName="Password_" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="WalletDetails" ColumnName="WalletDetails" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFeedbacks">
+      <EntityTypeMapping TypeName="dbNewBusModel.tblFeedback">
+        <MappingFragment StoreEntitySet="tblFeedback">
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="Question1" ColumnName="Question1" />
+          <ScalarProperty Name="Question2" ColumnName="Question2" />
+          <ScalarProperty Name="Question3" ColumnName="Question3" />
+          <ScalarProperty Name="Question4" ColumnName="Question4" />
+          <ScalarProperty Name="Question5" ColumnName="Question5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReturnTickets">
+      <EntityTypeMapping TypeName="dbNewBusModel.tblReturnTicket">
+        <MappingFragment StoreEntitySet="tblReturnTicket">
+          <ScalarProperty Name="Return_data" ColumnName="Return_data" />
+          <ScalarProperty Name="Return_Time" ColumnName="Return_Time" />
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="bookingID" ColumnName="bookingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Betweentwodates" FunctionName="dbNewBusModel.Store.Betweentwodates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbNewBusModel.Betweentwodates_Result">
+          <ScalarProperty Name="Source_B" ColumnName="Source_B" />
+          <ScalarProperty Name="Destination_B" ColumnName="Destination_B" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="TicketType" ColumnName="TicketType" />
+          <ScalarProperty Name="TravelFare" ColumnName="TravelFare" />
+          <ScalarProperty Name="CustUsername" ColumnName="CustUsername" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="BusNo" ColumnName="BusNo" />
+          <ScalarProperty Name="SelectedSeats" ColumnName="SelectedSeats" />
+          <ScalarProperty Name="paymentBy" ColumnName="paymentBy" />
+          <ScalarProperty Name="bookingID" ColumnName="bookingID" />
+          <ScalarProperty Name="paymentId" ColumnName="paymentId" />
+          <ScalarProperty Name="CancellationBit" ColumnName="CancellationBit" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BUS_SEARCH" FunctionName="dbNewBusModel.Store.BUS_SEARCH">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbNewBusModel.BUS_SEARCH_Result">
+          <ScalarProperty Name="BusNo" ColumnName="BusNo" />
+          <ScalarProperty Name="BusName" ColumnName="BusName" />
+          <ScalarProperty Name="Source_" ColumnName="Source_" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="NoOfSeats" ColumnName="NoOfSeats" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="ViaStop" ColumnName="ViaStop" />
+          <ScalarProperty Name="PerSeatCost" ColumnName="PerSeatCost" />
+          <ScalarProperty Name="Availableseats" ColumnName="Availableseats" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Fetch_paymentid" FunctionName="dbNewBusModel.Store.Fetch_paymentid" />
+    <FunctionImportMapping FunctionImportName="fetchpaymentbyemail" FunctionName="dbNewBusModel.Store.fetchpaymentbyemail" />
+    <FunctionImportMapping FunctionImportName="fetchpaymentbyemail1" FunctionName="dbNewBusModel.Store.fetchpaymentbyemail1" />
+    <FunctionImportMapping FunctionImportName="fetchpaymentid" FunctionName="dbNewBusModel.Store.fetchpaymentid" />
+    <FunctionImportMapping FunctionImportName="FrequentlyTravel" FunctionName="dbNewBusModel.Store.FrequentlyTravel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbNewBusModel.FrequentlyTravel_Result">
+          <ScalarProperty Name="Source_B" ColumnName="Source_B" />
+          <ScalarProperty Name="Destination_B" ColumnName="Destination_B" />
+          <ScalarProperty Name="total_count" ColumnName="total_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RefundNew" FunctionName="dbNewBusModel.Store.RefundNew" />
+  </EntityContainerMapping>
+</Mapping>

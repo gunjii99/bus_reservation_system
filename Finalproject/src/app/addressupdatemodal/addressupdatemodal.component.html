@@ -1,0 +1,9 @@
+<form role="form" class="form" method="post" [formGroup]="updateaddress" (ngSubmit)="onSubmitAddress()">
+    <div class="form-group">
+      <label for="addamount" style="color: white;">Add Address</label>
+      <input type="text" formControlName="Address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your address">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-default" [routerLink]="['/userdashboard/userprofile']" routerLinkActive="selected">Back</button>
+  </form>
+
